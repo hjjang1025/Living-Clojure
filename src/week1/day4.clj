@@ -31,10 +31,10 @@
 
 ; #32
 ; Write a function which duplicates each element of a sequence.
-(= (mapcat (fn [x] (list x x)) [1 2 3]) '(1 1 2 2 3 3))
-(= (mapcat (fn [x] (list x x)) [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
-(= (mapcat (fn [x] (list x x)) [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
-(= (mapcat (fn [x] (list x x)) [44 33]) [44 44 33 33])
+(= (mapcat #(list % %) [1 2 3]) '(1 1 2 2 3 3))
+(= (mapcat #(list % %) [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
+(= (mapcat #(list % %) [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+(= (mapcat #(list % %) [44 33]) [44 44 33 33])
 
 ; true는 잘 나오는데 4clojure 사이트에서 오류
 ; map (fn [x] (flatten (list x x)))
